@@ -7,7 +7,8 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0b1220; color: #f1f5f9; line-height: 1.6; }
+  body { font-family: 'Times New Roman', Times, serif; background: #0b1220; color: #f1f5f9; line-height: 1.6; }
+  button { font-family: inherit; }
 
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -15,19 +16,19 @@
     padding: 16px 32px; background: rgba(11,18,32,0.85); backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(56,189,248,0.15);
   }
-  nav .logo { font-weight: 700; font-size: 1.1rem; }
+  nav .logo { font-weight: 700; font-size: 1.2rem; }
   nav ul { list-style: none; display: flex; gap: 28px; }
-  nav ul li a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; transition: color .2s; }
+  nav ul li a { color: #cbd5e1; text-decoration: none; font-size: 1rem; transition: color .2s; }
   nav ul li a:hover { color: #38bdf8; }
-  nav .cta { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 8px 18px; border-radius: 30px; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  nav .cta { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 8px 18px; border-radius: 30px; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
 
   .hero { position: relative; height: 68vh; min-height: 420px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
   .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease-in-out; }
   .slide.active { opacity: 1; }
   .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(160deg, rgba(11,18,32,0.92), rgba(15,23,42,0.75) 55%, rgba(37,99,235,0.35)); }
   .hero-content { position: relative; z-index: 2; padding: 0 20px; }
-  .hero-content h1 { font-size: clamp(2rem, 5vw, 3.2rem); background: linear-gradient(90deg, #f1f5f9, #93c5fd); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; }
-  .hero-content p { font-size: 1.1rem; color: #cbd5e1; max-width: 520px; margin: 0 auto; }
+  .hero-content h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); background: linear-gradient(90deg, #f1f5f9, #93c5fd); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; }
+  .hero-content p { font-size: 1.25rem; color: #cbd5e1; max-width: 520px; margin: 0 auto; }
   .hero-arrows { position: absolute; z-index: 3; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 16px; }
   .hero-arrows button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; }
   .hero-arrows button:hover { background: rgba(56,189,248,0.35); }
@@ -37,30 +38,29 @@
 
   section { max-width: 780px; margin: 0 auto; padding: 70px 24px; }
   section.wide { max-width: 1100px; }
-  .label { display: inline-block; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: #38bdf8; margin-bottom: 8px; font-weight: 600; }
-  h2 { font-size: 1.7rem; margin-bottom: 18px; }
-  .lead { color: #94a3b8; font-size: 1.02rem; }
+  .label { display: inline-block; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: #38bdf8; margin-bottom: 8px; font-weight: 600; }
+  h2 { font-size: 1.9rem; margin-bottom: 18px; }
+  .lead { color: #94a3b8; font-size: 1.15rem; }
 
   .cards { display: grid; gap: 16px; margin-top: 24px; }
   .card { background: linear-gradient(135deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9)); border: 1px solid rgba(56,189,248,0.15); padding: 20px 22px; border-radius: 12px; }
-  .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
-  .card p { color: #94a3b8; font-size: 0.92rem; }
+  .card h3 { font-size: 1.2rem; margin-bottom: 6px; }
+  .card p { color: #94a3b8; font-size: 1.02rem; }
 
   .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
   .art { position: relative; min-height: 300px; border-radius: 12px; overflow: hidden; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; transition: transform .25s; }
   .art:hover { transform: translateY(-4px); }
   .art::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,18,32,0.55), rgba(11,18,32,0.88)); }
   .art div { position: relative; }
-  .art h3 { font-size: 1.15rem; line-height: 1.3; margin-bottom: 8px; }
-  .art p { font-size: 0.85rem; color: #cbd5e1; margin-bottom: 8px; }
-  .art small { color: #38bdf8; font-size: 0.75rem; }
+  .art h3 { font-size: 1.3rem; line-height: 1.3; margin-bottom: 8px; }
+  .art p { font-size: 1rem; color: #cbd5e1; }
 
   .loc { background: rgba(30,41,59,0.6); border-radius: 12px; padding: 18px 20px; border-left: 3px solid #38bdf8; }
 
   footer { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #0f172a, #1e293b); border-top: 1px solid rgba(56,189,248,0.15); }
   footer h2 { margin-bottom: 10px; }
-  footer p { color: #94a3b8; margin-bottom: 22px; }
-  .whats { display: inline-block; background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 14px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; }
+  footer p { color: #94a3b8; margin-bottom: 22px; font-size: 1.1rem; }
+  .whats { display: inline-block; background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; padding: 14px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
   .social { display: flex; justify-content: center; gap: 14px; margin-top: 26px; }
   .social a { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(56,189,248,0.4); color: #38bdf8; transition: all .2s; }
   .social a:hover { background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; }
@@ -121,22 +121,22 @@
   <div class="articles">
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1772588627342-5ec373e236d8?auto=format&fit=crop&w=800&q=70')"><div>
       <h3>Sua contabilidade mais bem posicionada e profissional</h3>
-      <p>Um site claro mostra ao cliente que seu escritório contábil é sério e organizado.</p><small>12 de setembro de 2026</small></div></div>
+      <p>Um site claro mostra ao cliente que seu escritório contábil é sério e organizado.</p></div></div>
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1747992021633-762a63985d01?auto=format&fit=crop&w=800&q=70')"><div>
       <h3>Seu escritório com cara de empresa que inspira confiança</h3>
-      <p>Presença digital que transmite estrutura, seriedade e credibilidade.</p><small>5 de setembro de 2026</small></div></div>
+      <p>Presença digital que transmite estrutura, seriedade e credibilidade.</p></div></div>
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1505488387362-48bc38155987?auto=format&fit=crop&w=800&q=70')"><div>
       <h3>Advocacia com autoridade também na internet</h3>
-      <p>Como um site bem feito reforça a reputação do seu escritório de advocacia.</p><small>28 de agosto de 2026</small></div></div>
+      <p>Como um site bem feito reforça a reputação do seu escritório de advocacia.</p></div></div>
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1758691461935-202e2ef6b69f?auto=format&fit=crop&w=800&q=70')"><div>
       <h3>Clínicas: o Google é a nova recepção</h3>
-      <p>O paciente pesquisa antes de ligar. Esteja onde ele está procurando.</p><small>20 de agosto de 2026</small></div></div>
+      <p>O paciente pesquisa antes de ligar. Esteja onde ele está procurando.</p></div></div>
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=70')"><div>
       <h3>Como aparecer no Google da sua cidade</h3>
-      <p>SEO local em passos simples para pequenas empresas.</p><small>11 de agosto de 2026</small></div></div>
+      <p>SEO local em passos simples para pequenas empresas.</p></div></div>
     <div class="art" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=70'); background-position: right;"><div>
       <h3>Blog mensal: conteúdo que traz clientes</h3>
-      <p>Um artigo por mês mantém o site vivo e melhor posicionado.</p><small>2 de agosto de 2026</small></div></div>
+      <p>Um artigo por mês mantém o site vivo e melhor posicionado.</p></div></div>
   </div>
 </section>
 
